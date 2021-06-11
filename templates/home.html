@@ -1,0 +1,24 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Hi {{ user.username }}!</h1>
+  <form action="{% url 'index' %}">
+    <input type="submit" value="Enter a room" />
+  </form>
+  <form action="{% url 'logout' %}">
+    <input type="submit" value="Log Out" />
+  </form>
+{% else %}
+  <p>You are not logged in</p>
+  <form action="{% url 'login' %}">
+    <input type="submit" value="Log In" />
+  </form>
+{% endif %}
+<form action="{% url 'password_reset' %}">
+  <input type="submit" value="Reset Password" />
+</form>
+{% endblock %}
