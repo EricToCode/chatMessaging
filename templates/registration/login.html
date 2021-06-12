@@ -10,4 +10,7 @@
   {{ form.as_p }}
   <button type="submit">Log In</button>
 </form>
+<form action="{% url 'home' %}">
+  <input type="submit" value="Go to Main Menu" />
+</form>
 {% endblock %}

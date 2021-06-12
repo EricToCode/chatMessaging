@@ -13,9 +13,13 @@
     <input type="submit" value="Log Out" />
   </form>
 {% else %}
+  <h1>Welcome to ChatMessaging app!</h1>
   <p>You are not logged in</p>
   <form action="{% url 'login' %}">
     <input type="submit" value="Log In" />
+  </form>
+  <form action="{% url 'signup' %}" label="Don't have an account? Sign up here!">
+    <input type="submit" value="Sign Up" />
   </form>
 {% endif %}
 <form action="{% url 'password_reset' %}">
